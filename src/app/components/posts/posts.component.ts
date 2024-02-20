@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PlaceholderService } from '../../services/placeholder.service'; // Adjust the path as per your project structure
-import type { IPost } from '../../services/placeholder.service'; // Adjust the path as per your project structure
+import { PlaceholderService } from '../../services/placeholder.service';
+import type { IPost } from '../../services/placeholder.service';
 import { Subscription } from 'rxjs';
 
 @Component({
