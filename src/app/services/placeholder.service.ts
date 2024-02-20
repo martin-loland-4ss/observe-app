@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, timer  } from 'rxjs';
 import { tap, switchMap } from 'rxjs/operators';
 
-interface IPost {
+export interface IPost {
   userId: number;
   id: number;
   title: string;
