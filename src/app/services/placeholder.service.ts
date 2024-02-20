@@ -25,12 +25,15 @@ export class PlaceholderService {
   private loadAtInterval(interval: number): void {
     timer(0, interval) // Emit value immediately, then every <interval> milliseconds
       .pipe(
-        switchMap(() => this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts')),
+        switchMap(() => this.http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts')),
         tap(posts => {
           console.log("updating posts"); 
+
+          // This is just to simulate updated data from api
           const nPosts = posts.length;
           const start = Math.floor(Math.random() * (nPosts - 5));
-          const selection = posts.slice(start, start+5);         
+          const selection = posts.slice(start, start+5); 
+
           this.postsSubject.next(selection);
         })
       )
